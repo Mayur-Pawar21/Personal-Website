@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Music | Your Name</title> <!-- EDIT -->
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%BF%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700&family=Young+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Style.css">
+  <script>
+    (function () {
+      var r = document.documentElement, t = null, a = null;
+      try { t = localStorage.getItem('theme'); a = localStorage.getItem('accent'); } catch (e) {}
+      r.dataset.theme = t || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      r.dataset.accent = a || 'moss';
+    })();
+  </script>
+</head>
+
+<body data-page="music">
+  <a class="skip" href="#main">Skip to content</a>
+  <header id="site-header" class="site-header"></header>
+
+  <main id="main">
+    <section class="wrap page-head">
+      <h1>Music</h1>
+      <!-- EDIT -->
+      <p class="lede">Pick a song to put it on the record player, or let me surprise you.</p>
+    </section>
+
+    <section class="wrap music">
+      <!-- Record player. The label in the middle shows the song's album art (the "cover" field in Data.js). -->
+      <div class="deck">
+        <div class="record" id="record" aria-hidden="true">
+          <div class="label" id="record-label"></div>
+        </div>
+        <p class="np-title" id="np-title"></p>
+        <p class="np-artist" id="np-artist"></p>
+        <div class="actions">
+          <button class="btn" type="button" id="shuffle">Surprise me</button>
+          <a class="btn btn-ghost" id="np-link" href="#" target="_blank" rel="noopener" hidden>Open this song</a>
+        </div>
+      </div>
+
+      <div>
+        <h2>The playlist</h2>
+        <ul class="tracklist" id="tracklist"></ul>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <h2>The whole playlist</h2>
+      <!-- PLACEHOLDER: set PLAYLIST_EMBED in Data.js and your Spotify (or other) player appears here -->
+      <div class="embed-box" id="embed">
+        <p>Your playlist player goes here. Add the embed link to PLAYLIST_EMBED in Data.js.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="Data.js"></script>
+  <script src="Index.js"></script>
+</body>
+</html>
