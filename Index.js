@@ -72,7 +72,7 @@
 
   /* ---------- header (theme toggle + mobile menu) ---------- */
   const PAGES = [
-    ['Home',  'Index.html', 'home'],
+    ['Home',  'index.html', 'home'],
     ['Blog',  'Blog.html',  'blog'],
     ['Shows', 'Shows.html', 'shows'],
     ['Games', 'Games.html', 'games'],
